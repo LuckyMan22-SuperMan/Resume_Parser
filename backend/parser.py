@@ -36,7 +36,17 @@ def _extract_pdf(data: bytes) -> str:
     parts = []
     for page in reader.pages:
         parts.append(page.extract_text() or "")
-    return "\n".join(parts)
+    text = "\n".join(parts)
+
+    # Option 2: Clean font/icon glyph artifacts before emails.
+    # Strips 1-3 letter icon prefixes (like 'p' or 'env') that get concatenated 
+    # onto the email local-part during PDF text extraction.
+    text = re.sub(
+        r"(?<=\s)[a-zA-Z]{1,3}(?=[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})",
+        "",
+        text,
+    )
+    return text
 
 
 def _extract_docx(data: bytes) -> str:
