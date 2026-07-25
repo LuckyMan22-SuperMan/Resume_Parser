@@ -69,3 +69,11 @@ curl -X POST http://127.0.0.1:8000/api/parse -F "file=@resume.pdf"
 
 - **skill_overlap** = (resume skills ∩ JD skills) / (JD skills)
 - **tfidf_cosine** = cosine similarity of TF-IDF vectors over the full texts
+
+## Notes for placements / interviews
+
+- Talk about the trade-off of pure-Python TF-IDF vs. transformer embeddings
+  (sentence-transformers). The current design is dependency-light and works on
+  bleeding-edge Python; swapping in embeddings is a natural "future work" answer.
+- Extend `skills.py` with domain-specific skills for a target role.
+- Add persistence (SQLite) to store past matches, and Dockerize for deployment.

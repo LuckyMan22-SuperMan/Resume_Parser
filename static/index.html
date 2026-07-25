@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Parser + JD Matcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">RP</span>
+      <div>
+        <h1>Resume Parser <span class="accent">+ JD Matcher</span></h1>
+        <p>Extract structured data from resumes and score them against a job description.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel input-panel">
+      <h2 class="panel-title">1&nbsp;·&nbsp;Upload &amp; Configure</h2>
+
+      <label class="dropzone" id="dropzone">
+        <input type="file" id="fileInput" accept=".pdf,.docx,.txt" hidden />
+        <div class="dz-inner">
+          <div class="dz-icon">⬆</div>
+          <p class="dz-main">Drop your resume here or <span>browse</span></p>
+          <p class="dz-sub">PDF, DOCX or TXT · max 5MB</p>
+          <p class="dz-file" id="fileName"></p>
+        </div>
+      </label>
+
+      <div class="jd-block">
+        <div class="jd-head">
+          <label for="jdInput">Job Description <span class="muted">(optional — needed for match score)</span></label>
+          <button class="link-btn" id="sampleBtn" type="button">Paste sample JD</button>
+        </div>
+        <textarea id="jdInput" rows="8" placeholder="Paste the job description here to get a match score, missing skills and a fit verdict..."></textarea>
+      </div>
+
+      <div class="actions">
+        <button class="btn secondary" id="parseBtn">Parse Resume</button>
+        <button class="btn primary" id="matchBtn">Match to JD</button>
+      </div>
+      <p class="error" id="error"></p>
+    </section>
+
+    <section class="panel result-panel">
+      <h2 class="panel-title">2&nbsp;·&nbsp;Results</h2>
+      <div id="placeholder" class="placeholder">
+        <div class="ph-icon">📄</div>
+        <p>Upload a resume and hit <strong>Parse</strong> or <strong>Match</strong> to see results.</p>
+      </div>
+      <div id="results" class="results hidden"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Built with FastAPI · pure-Python TF-IDF matching · no external ML APIs</p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
