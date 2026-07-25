@@ -84,16 +84,20 @@ async def match_endpoint(
 # --------------------------------------------------------------------------- #
 # Static frontend
 # --------------------------------------------------------------------------- #
-if STATIC_DIR.exists():
-    app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
+# Explicitly resolve path relative to this main.py file
+BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_DIR = BASE_DIR / "static"
 
-    @app.get("/")
-    def index() -> FileResponse:
-        return FileResponse(str(STATIC_DIR / "index.html"))
+# Mount static files directly (no conditional check)
+app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
+
+@app.get("/")
+def index() -> FileResponse:
+    return FileResponse(str(STATIC_DIR / "index.html"))
 
 
 if __name__ == "__main__":
     import uvicorn
 
     port = int(os.environ.get("PORT", "8000"))
-    uvicorn.run("main:app", host="127.0.0.1", port=port, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
