@@ -154,15 +154,5 @@ const INTERVIEW_QUESTIONS = {
     { q: "What is a confusion matrix?", a: "Confusion matrix shows True Positives, True Negatives, False Positives, False Negatives. Used to calculate accuracy, precision, recall, and F1-score for classification models." },
     { q: "Explain gradient descent.", a: "Gradient descent is an optimization algorithm that iteratively adjusts model parameters to minimize loss. Updates parameters in the direction of steepest descent. Learning rate controls step size." },
     { q: "What is feature scaling?", a: "Feature scaling normalizes or standardizes features to have similar ranges. Prevents features with larger scales from dominating. Common methods: normalization (0-1), standardization (mean 0, std 1)." }
-  ],
-  "OOP": [
-    { q: "What are the four pillars of OOP?", a: "Encapsulation (bundling data/methods), Abstraction (hiding complexity), Inheritance (code reuse), Polymorphism (multiple forms). They enable maintainable, scalable code." },
-    { q: "Explain encapsulation.", a: "Encapsulation bundles data (attributes) and methods together, hiding internal details from the outside. Use access modifiers (private, protected, public) to control visibility and maintain data integrity." },
-    { q: "What is inheritance?", a: "Inheritance allows a class to inherit properties and methods from a parent class. Enables code reuse and establishes hierarchical relationships. Child class extends parent with 'extends' (single) or 'implements' (multiple interfaces)." },
-    { q: "Explain polymorphism.", a: "Polymorphism allows objects of different types to be treated as objects of a common parent type. Compile-time (method overloading) and runtime (method overriding). Enables flexible, extensible code." },
-    { q: "What is abstraction?", a: "Abstraction hides complex implementation details and shows only essential features. Abstract classes and interfaces define contracts without implementation. Reduces complexity and improves modularity." },
-    { q: "What's the difference between composition and inheritance?", a: "Inheritance is 'is-a' relationship (Dog is an Animal). Composition is 'has-a' relationship (Car has an Engine). Composition is more flexible and avoids tight coupling. Prefer composition over inheritance." },
-    { q: "Explain the SOLID principles.", a: "S: Single Responsibility, O: Open/Closed, L: Liskov Substitution, I: Interface Segregation, D: Dependency Inversion. Guidelines for writing maintainable, scalable OOP code." },
-    { q: "What is a constructor?", a: "Constructor is a special method called when an object is created. Initializes object state. Can have parameters. Every class has a default constructor if not explicitly defined." }
   ]
 };
