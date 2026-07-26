@@ -19,11 +19,16 @@ let selectedFile = null;
 // Interview Questions Database
 const INTERVIEW_QUESTIONS = {
   "Python": [
-    { q: "What are decorators in Python and how do you use them?", a: "Decorators are functions that modify other functions or classes. They use the @ syntax and allow you to wrap a function in another function to extend its behavior without permanently modifying it." },
-    { q: "Explain the difference between lists and tuples.", a: "Lists are mutable (can be modified), while tuples are immutable (cannot be changed). Lists use square brackets [], tuples use parentheses (). Tuples are faster and can be used as dictionary keys." },
-    { q: "What is a lambda function?", a: "A lambda is a small anonymous function defined with the lambda keyword. It can take multiple arguments but only has one expression. Syntax: lambda arguments: expression" },
-    { q: "How does garbage collection work in Python?", a: "Python uses reference counting as its primary garbage collection method. When an object's reference count drops to zero, it's deallocated. Python also has a cyclic garbage collector for circular references." },
-    { q: "What's the difference between *args and **kwargs?", a: "*args allows you to pass variable-length positional arguments as a tuple, while **kwargs allows keyword arguments as a dictionary. Use *args for non-keyword arguments and **kwargs for keyword arguments." }
+    { q: "What are decorators in Python and how do you use them?", 
+      a: "Decorators are functions that modify other functions or classes. They use the @ syntax and allow you to wrap a function in another function to extend its behavior without permanently modifying it." },
+    { q: "Explain the difference between lists and tuples.", 
+      a: "Lists are mutable (can be modified), while tuples are immutable (cannot be changed). Lists use square brackets [], tuples use parentheses (). Tuples are faster and can be used as dictionary keys." },
+    { q: "What is a lambda function?", 
+      a: "A lambda is a small anonymous function defined with the lambda keyword. It can take multiple arguments but only has one expression. Syntax: lambda arguments: expression" },
+    { q: "How does garbage collection work in Python?", 
+      a: "Python uses reference counting as its primary garbage collection method. When an object's reference count drops to zero, it's deallocated. Python also has a cyclic garbage collector for circular references." },
+    { q: "What's the difference between *args and **kwargs?", 
+      a: "*args allows you to pass variable-length positional arguments as a tuple, while **kwargs allows keyword arguments as a dictionary. Use *args for non-keyword arguments and **kwargs for keyword arguments." }
   ],
   "JavaScript": [
     { q: "What is hoisting in JavaScript?", a: "Hoisting moves declarations to the top of their scope. Variable and function declarations are hoisted, but initializations happen in place. var is hoisted with undefined, let/const are hoisted but not initialized." },
@@ -31,6 +36,16 @@ const INTERVIEW_QUESTIONS = {
     { q: "What's the difference between == and ===?", a: "== performs type coercion before comparison, while === compares both value and type without coercion. === is preferred as it's more predictable." },
     { q: "What is the event loop?", a: "The event loop continuously checks if there are tasks in the call stack and event queue. It moves tasks from the queue to the stack when the stack is empty, handling asynchronous operations." },
     { q: "What are Promises and async/await?", a: "Promises represent a value that may be available now, or in the future. async/await is syntactic sugar over Promises, making asynchronous code look synchronous." }
+  ],
+    "C++": [
+    { q: "Define tokens in C++", 
+      a: "A token is the smallest meaningful unit of a C++ program that the compiler recognizes during compilation. Every C++ program is made up of different types of tokens." },
+    { q: "What are the different types of token?", 
+      a: "Keywords, Identifiers, Constants, String literals, operators" },
+    { q: "Define std", 
+      a: "std is the standard namespace in C++ that contains identifiers provided by the C++ Standard Library, such as cout, cin, string, and vector. It helps organize library components and prevents naming conflicts." },
+    { q: "What is the function of the keyword 'auto'?", 
+      a: "The auto keyword allows the compiler to automatically deduce the data type of a variable from its initializer" }
   ],
   "React": [
     { q: "What is the Virtual DOM?", a: "The Virtual DOM is a lightweight copy of the real DOM. React uses it to optimize updates by diffing changes and only updating the parts that changed, improving performance." },
